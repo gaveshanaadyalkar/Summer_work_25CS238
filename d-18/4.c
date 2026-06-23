@@ -1,22 +1,33 @@
 #include<stdio.h>
 int main()
 {
-    int arr1[]={1,2,3,4,5};
-    int arr2[]={3,4,5,6,8};
-    int size1=sizeof(arr1)/sizeof(arr1[0]);
-    int size2=sizeof(arr2)/sizeof(arr2[0]);
-    printf("common elements are");
-    for(int i=0;i<size1;i++)
+    int arr[100];
+    int size,i,j,temp;
+    printf("enter the number of elements");
+    scanf("%d",&size);
+    printf("entre %d element",size);
+    for(i=0;i<size;i++)
     {
-        for(int j=0;j<size2;j++)
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<size-1;i++)
+    {
+        for(j=i+1;j<size;j++)
         {
-            if(arr1[i]==arr2[j])
+            if(arr[i]<arr[j])
             {
-                printf("%d",arr1[i]);
-                break;
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
             }
         }
     }
-    printf("\n");
-    return 0;
+    printf("sorted array in desending order");
+    for(i=0;i<size;i++)
+    {
+        printf("%d",arr[i]);
+    
+    }
+  printf("\n");
+  return 0;
 }

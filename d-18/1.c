@@ -1,26 +1,28 @@
 #include<stdio.h>
 int main()
 {
-    int arr1[]={1,2,3,4,5};
-    int arr2[]={6,7,8,9};
-    int size1=5;
-    int size2=4;
-    int merge[9];
-    int index=0;
-    for(int i=0;i<size1;i++)
+    int arr[]={ 1,3,6,4,5,8,0};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int temp;
+    for(int i=0;i<size-1;i++)
     {
-     merge[index]=arr1[i];
-     index++;
+        for(int j=0;j<size-i-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                
+                
+            }
+        }
     }
-    for(int i=0;i<size2;i++)
+    printf("sorted array");
+    for(int i=0;i<size;i++)
     {
-        merge[index]=arr2[i];
-        index++;
+        printf("%d",arr[i]);
     }
-    printf("merged array");
-    for(int i=0;i<index;i++)
-    {
-        printf("%d",merge[i]);
-    }
+    printf("\n");
     return 0;
 }
