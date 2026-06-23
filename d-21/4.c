@@ -1,35 +1,16 @@
 #include<stdio.h>
 int main()
 {
-    int r,c;
-    printf("enter the number of rows and columns");
-    scanf("%d %d ",&r,&c);
-    int matrix[r][c];
-    printf("enter the elements of the matrixs");
-    for(int i=0;i<r;i++)
+    char str[100];
+    printf("enter the lowercase ");
+    scanf("%s",str);
+    for(int i=0;str[i]!='\0';i++)
     {
-        for(int j=0;j<c;j++)
+        if(str[i]>='a' && str[i]<='z')
         {
-            printf("elements [%d][%d]",i,j);
-            scanf("%d",&matrix[i][j]);
+            str[i]=str[i]-32;
         }
     }
-    printf("the matrix is");
-    for(int i=0;i<r;i++)
-    {
-        for(int j=0;j<c;j++)
-        {printf("%d",matrix[i][j]);}
-        printf("\n");}
-        printf("\n");
-
-    for(int j=0;j<c;j++)
-    {
-        int colSum=0;
-        for(int i=0;i<r;i++)
-        {
-            colSum+=matrix[i][j];
-        }
-        printf("sum of column %d=%d",j+1,colSum);
-    }
+    printf("uppercase test %s ",str);
     return 0;
 }

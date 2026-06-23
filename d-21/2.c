@@ -1,36 +1,14 @@
 #include<stdio.h>
+#include<string.h>
 int main()
 {
-    int matrix[10][10];
-    int n,i,j;
-    int isSymmetric=1;
-    printf("enter the size of square matrix");
-    scanf("%d",&n);
-    printf("enter the element row by row");
-    for(i=0;i<n;i++)
+    char str[]="Hello";
+    int len =strlen(str);
+    printf("reversed string");
+    for(int i=len-1;i>=0;i--)
     {
-        for(j=0;j<n;j++)
-        {
-            printf("element [%d][%d]",i,j);
-            scanf("%d",&matrix[j][i]);
-        }
+        printf("%c",str[i]);
     }
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n;j++)
-        {
-            if(matrix[i][j]!=matrix[j][i])
-            {
-                isSymmetric=0;
-            }
-        }
-    }
-    if(isSymmetric==1)
-    {
-        printf("the matrix is symmetric");
-    }
-    else{
-        printf(" the matrix is not symmetric");
-    }
+    printf("\n");
     return 0;
 }

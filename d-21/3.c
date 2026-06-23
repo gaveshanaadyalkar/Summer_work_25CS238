@@ -1,20 +1,25 @@
 #include<stdio.h>
 int main()
 {
-   int matrix[3][3]={
-    {1,2,3},
-    {4,5,6},
-    {7,8,9}
-   };
-   int rowSum;
-   for(int i=0;i<3;i++)
-{
-    rowSum=0;
-    for(int j=0;j<3;j++)
+    char str[100];
+    int v=0;
+    int c=0;
+    printf("enter a word");
+    scanf("%s",str);
+    int i=0;
+    while(str[i]!='\0')
     {
-        rowSum+=matrix[i][j];
+        char ch=str[i];
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+        v++;}
+    
+  else if((ch>='a' && ch<='z')||(ch>='A' && ch<='Z')){
+    
+        c++;
     }
-    printf(" \n%dsum of row %d \n",i+1,rowSum);
-}
-return 0;
+    i++;}
+    printf("vowels %d",v);
+    printf("consonants %d",c);
+    return 0;
+
 }
