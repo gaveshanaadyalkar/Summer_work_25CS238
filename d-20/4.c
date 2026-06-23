@@ -1,22 +1,35 @@
 #include<stdio.h>
 int main()
-{  int s,i,j,sum=0;
-    printf("enter the size of square matrix");
-    scanf("%d",&s);
-    int matrix[s][s];
-    printf("enter the element of matrix");
-    for(i=0;i<s;i++)
+{
+    int r,c;
+    printf("enter the number of rows and columns");
+    scanf("%d %d ",&r,&c);
+    int matrix[r][c];
+    printf("enter the elements of the matrixs");
+    for(int i=0;i<r;i++)
     {
-        for(j=0;j<s;j++)
+        for(int j=0;j<c;j++)
         {
-           printf(" elements [%d][%d]",i,j);
-           scanf("%d",&matrix[i][j]);
+            printf("elements [%d][%d]",i,j);
+            scanf("%d",&matrix[i][j]);
         }
     }
-    for(i=0;i<s;i++)
+    printf("the matrix is");
+    for(int i=0;i<r;i++)
     {
-        sum=sum+matrix[i][i];
+        for(int j=0;j<c;j++)
+        {printf("%d",matrix[i][j]);}
+        printf("\n");}
+        printf("\n");
+
+    for(int j=0;j<c;j++)
+    {
+        int colSum=0;
+        for(int i=0;i<r;i++)
+        {
+            colSum+=matrix[i][j];
+        }
+        printf("sum of column %d=%d",j+1,colSum);
     }
-    printf("sum of diagonal %d",sum);
     return 0;
 }

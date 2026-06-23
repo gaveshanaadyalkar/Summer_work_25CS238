@@ -1,39 +1,36 @@
 #include<stdio.h>
 int main()
 {
-    int matrixA[3][3],matrixB[3][3],result[3][3];
-    int i,j;
-    printf("enter elements for first matrix");
-    for(i=0;i<3;i++)
+    int matrix[10][10];
+    int n,i,j;
+    int isSymmetric=1;
+    printf("enter the size of square matrix");
+    scanf("%d",&n);
+    printf("enter the element row by row");
+    for(i=0;i<n;i++)
     {
-        for(j=0;j<3;j++)
+        for(j=0;j<n;j++)
         {
-            scanf("%d",&matrixA[i][j]);
+            printf("element [%d][%d]",i,j);
+            scanf("%d",&matrix[j][i]);
         }
     }
-    printf("enter elements for the second matrix");
-    for(i=0;i<3;i++)
+    for(i=0;i<n;i++)
     {
-        for(int j=0;j<3;j++)
+        for(j=0;j<n;j++)
         {
-            scanf("%d",&matrixB[i][j]);
+            if(matrix[i][j]!=matrix[j][i])
+            {
+                isSymmetric=0;
+            }
         }
     }
-    for(i=0;i<3;i++)
+    if(isSymmetric==1)
     {
-        for(j=0;j<3;j++)
-        {
-            result[i][j]=matrixA[i][j]-matrixB[i][j];
-        }
+        printf("the matrix is symmetric");
     }
-    printf("resulting matrix after subtracting");
-    for(i=0;i<3;i++)
-    {
-        for(j=0;j<3;j++)
-        {
-            printf("%d",result[i][j]);
-        }
-        printf("\n");
+    else{
+        printf(" the matrix is not symmetric");
     }
- return 0;
+    return 0;
 }
